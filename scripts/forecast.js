@@ -28,12 +28,14 @@ const getCity = async (city) => {
 
 };
 
-getCity('akure')
-    .then((data) => {
-        return getWeather(data.Key);
-    }).then((data) => {
-        console.log('data resolved:', data);
-    })
-    .catch((err) => {
-        console.log('data rejected:', err);
-    });
+// TEST ON THE CONSOLE
+
+// getCity('akure')
+//     .then((data) => {
+//         return getWeather(data.Key);
+//     }).then((data) => {
+//         console.log('data resolved:', data);
+//     })
+//     .catch((err) => {
+//         console.log('data rejected:', err);
+//     });
