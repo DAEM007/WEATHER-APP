@@ -12,7 +12,8 @@ const updateUI = (data) => {
     // BY DESTRUCTURING THE ABOVE PROPERTIES WE THEN HAVE...
 
     const { cityDets, weather } = data;
-
+    console.log(data);
+    
     // update the details to the template
     details.innerHTML = `
         <h5 class="my-3">${cityDets.EnglishName}</h5>
@@ -24,18 +25,23 @@ const updateUI = (data) => {
     `;
 
     // Update night & day icon images
-    const iconSrc = `img/icons/${weather.weatherIcon}.svg`;
+    const iconSrc = `/WEATHER-APP/img/icons/${weather.WeatherIcon}.svg`;
     icon.setAttribute('src', iconSrc);
     
-
-    let timeSrc = null;
-    if(weather.IsDayTime){
-        timeSrc = 'img/day.svg';
-    }else{
-        timeSrc = 'img/night.svg';
-    }
+    let timeSrc = weather.IsDayTime ? 'img/day.svg' : 'img/night.svg';
 
     time.setAttribute('src', timeSrc);
+
+    // THE ABOVE IS THE ALTERNATIVE OF THE BELOW USING TERNARY OPERATOR....
+    
+    // let timeSrc = null;
+    // if(weather.IsDayTime){
+    //     timeSrc = 'img/day.svg';
+    // }else{
+    //     timeSrc = 'img/night.svg';
+    // }
+    
+    // time.setAttribute('src', timeSrc);
 
 
 
@@ -75,8 +81,8 @@ cityForm.addEventListener('submit', e => {
 
     updateCity(city)
         .then((data) => {
-            updateUI(data);
             // console.log(data);
+            updateUI(data);
         }).catch((err) => {
             console.log('data rejected:', err);
         });
