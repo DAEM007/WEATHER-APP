@@ -3,7 +3,7 @@ const key = 'ZmbCRpSiW10wj277UA7aZ9waRAE2iaKM';
 // GET WEATHER INFOMATION
 const getWeather = async (id) => {
 
-    const base = 'http://dataservice.accuweather.com/currentconditions/v1/';
+    const base = 'https://dataservice.accuweather.com/currentconditions/v1/';
     const query = `${id}?apikey=${key}`;
 
     const response = await fetch(base + query);
@@ -18,7 +18,7 @@ const getWeather = async (id) => {
 // GET CITY INFORMATION
 const getCity = async (city) => {
 
-    const base = 'http://dataservice.accuweather.com/locations/v1/cities/search';
+    const base = 'https://dataservice.accuweather.com/locations/v1/cities/search';
     const query = `?apikey=${key}&q=${city}`;
 
     const response = await fetch(base + query);
@@ -28,14 +28,3 @@ const getCity = async (city) => {
 
 };
 
-// TEST ON THE CONSOLE
-
-// getCity('akure')
-//     .then((data) => {
-//         return getWeather(data.Key);
-//     }).then((data) => {
-//         console.log('data resolved:', data);
-//     })
-//     .catch((err) => {
-//         console.log('data rejected:', err);
-//     });
