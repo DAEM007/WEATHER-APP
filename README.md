@@ -31,7 +31,7 @@ Daem weather provides a cloudiness indicator that gives you an idea of the curre
 ## Stay Connected
 
 Follow us:
-- Github: [githubp](https://www.github.com/daem007)
+- Github: [github](https://www.github.com/daem007)
 - Twitter: [twitter](https://www.twitter.com/daem007)
 - LinkedIn: [linkedIn](https://www.linkedin.com/in/emmanuel-nnaemekam-nwatu/)
 
